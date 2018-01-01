@@ -1,0 +1,8 @@
+﻿@model DepartmentModel
+@Html.ValidationSummary(true)
+@Html.HiddenFor(m => m.Id)
+<div class="form-group">
+    <label>Name</label>
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Name)
+</div>

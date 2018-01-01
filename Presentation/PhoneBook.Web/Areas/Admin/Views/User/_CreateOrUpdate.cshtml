@@ -1,0 +1,33 @@
+﻿@model UserModel
+@Html.ValidationSummary(true)
+@Html.HiddenFor(m => m.Id)
+<div class="form-group">
+    <label>Department</label>
+    @Html.DropDownListFor(model => model.DepartmentId, Model.Departments, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DepartmentId)
+</div>
+<div class="form-group">
+    <label>Manager</label>
+    @Html.DropDownListFor(model => model.ManagerId, Model.Users, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ManagerId)
+</div>
+<div class="form-group">
+    <label>FirstName</label>
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.FirstName)
+</div>
+<div class="form-group">
+    <label>LastName</label>
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.LastName)
+</div>
+<div class="form-group">
+    <label>PhoneNumber</label>
+    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.PhoneNumber)
+</div>
+<div class="form-group">
+    <label>Address</label>
+    @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Address)
+</div>

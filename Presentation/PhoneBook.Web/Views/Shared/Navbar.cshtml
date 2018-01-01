@@ -1,0 +1,35 @@
+﻿@using PhoneBook.Core
+@using PhoneBook.Core.Engine
+@{
+    var workContext = EngineContext.Current.IoCManager.Resolve<IWorkContext>();
+}
+<nav class="navbar navbar-default" role="navigation">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="pull-left"><a href="/">Phone Book</a></li>
+            @if (workContext.IsAdmin)
+            {
+                <li class="active"><a href="@Url.Content("~/admin")">Admin</a></li>
+            }
+            @if (workContext.CurrentUser != null)
+            {
+                <li class="pull-right"><a href="@Url.Action("Logout", "User")">Log Out</a></li>
+            }
+            else
+            {
+                <li class="pull-right"><a href="@Url.Action("Login","User")">Log In</a></li>
+            }
+        </ul>
+    </div>
+</nav>
+<style>
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+        .navbar-nav > li {
+            float: none;
+            display: inline-block;
+        }
+</style>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - PhoneBook</title>
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="~/Content/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="~/Content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrapper">
+        @Html.Partial("Navbar")
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                @Html.Partial("_Notifications")
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/Content/vendor/jquery-validate/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="~/Content/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

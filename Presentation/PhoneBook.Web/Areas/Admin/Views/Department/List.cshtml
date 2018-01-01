@@ -1,0 +1,49 @@
+﻿@model DepartmentListModel
+@{
+    ViewBag.Title = "Manage Departments";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Manage Departments</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-9">
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="@Url.Action("Create")" class="btn btn-primary"><i class="fa fa-plus-square fa-fw"></i>Create new</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var department in Model.Departments)
+                            {
+                                <tr>
+                                    <td>@department.Id</td>
+                                    <td>@department.Name</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", new {department.Id})" class="btn btn-default"><i class="fa fa-pencil fa-fw"></i>Edit</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
